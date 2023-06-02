@@ -1,0 +1,9 @@
+<div class="w-screen h-screen flex items-center justify-center bg-blue-800">
+    <div class="border grid grid-rows-3 " style="height: 650px; width: 650px;">
+        <div class=" grid grid-cols-3 " *ngFor="let row of board">
+            <div class="border grid grid-rows-3 justify-center items-center cursor-pointer hover:bg-blue-900" *ngFor="let item of row">
+                {{item}}
+            </div>
+        </div>
+    </div>
+</div>
