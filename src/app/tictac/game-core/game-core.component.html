@@ -1,9 +1,18 @@
-<div class="w-screen h-screen flex items-center justify-center bg-blue-800">
+<div class="w-screen h-screen flex flex-col items-center justify-around bg-blue-800">
+    <div class="w-8/12 h-10 flex justify-between pl-3 pr-3 border text-white">
+        <h1 class="text-2xl">{{player1.name}}</h1>
+        <h1 class="text-2xl">VS</h1>
+        <h1 class="text-2xl">{{player2.name}}</h1>
+    </div>
     <div class="border grid grid-rows-3 " style="height: 650px; width: 650px;">
-        <div class=" grid grid-cols-3 " *ngFor="let row of board">
-            <div class="border grid grid-rows-3 justify-center items-center cursor-pointer hover:bg-blue-900" *ngFor="let item of row">
+        <div class=" grid grid-cols-3 " *ngFor="let row of board; let i=index">
+            <div (click)="play(i,j)" class="border grid grid-rows-3 justify-center items-center cursor-pointer hover:bg-blue-900" *ngFor="let item of row;let j = index">
                 {{item}}
             </div>
         </div>
     </div>
+</div>
+
+<div *ngIf="openSetNamePopUp" style="box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.24);" class="absolute top-0 w-screen h-screen flex justify-center items-center">
+    <app-set-name-pop-up (start)="start($event)" ></app-set-name-pop-up>
 </div>
