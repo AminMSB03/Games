@@ -12,10 +12,10 @@ import { TictacModule } from './tictac/tictac.module';
     AppComponent
   ],
   imports: [
-    FormsModule,
     BrowserModule,
     AppRoutingModule,
-    TictacModule
+    TictacModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
